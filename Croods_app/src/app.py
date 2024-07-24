@@ -61,6 +61,7 @@ def delete(id: int):
 
 @app.route("/edit/<int:id>", methods=["GET", "POST"])
 def edit(id: int):
+    """ gives the app the ability to edit a task """
     task = MyTask.query.get_or_404(id)
     if request.method == "POST":
         task.content = request.form['content']
