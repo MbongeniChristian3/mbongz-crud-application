@@ -46,7 +46,7 @@ def index():
             return f"ERROR: {e}"
     else:
         tasks = MyTask.query.order_by(MyTask.created).all()
-        return render_template('home.html', tasks=tasks)
+        return render_template('edit.html', tasks=tasks)
 
 @app.route("/delete/<int:id>")
 def delete(id: int):
